@@ -3,6 +3,7 @@ import './App.css';
 import Heading from './components/Heading';
 import Counter from './components/Counter';
 import Countercomp from './components/Countercomp';
+import Todos from './components/Todos';
 
 class App extends Component {
   constructor() {
@@ -37,9 +38,15 @@ class App extends Component {
            clickSub={this.handleClickSub} 
           />
         </div>
+        
         <div>
           <Heading content="Render Counter Component" />
           <Countercomp />
+        </div>
+
+        <div>
+          <Heading content="Todos" />
+          <Todos />
         </div>
       </div>
     );
