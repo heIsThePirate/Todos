@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Todos = ({ counter, clickAdd, clickSub }) => {
+const Counter = ({ counter, clickAdd, clickSub }) => {
 		return (
 			<div>
 			<h2>{counter}</h2><br/>
@@ -10,4 +10,4 @@ const Todos = ({ counter, clickAdd, clickSub }) => {
 			);
 }
 
-export default Todos;
+export default Counter;

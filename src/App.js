@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Heading from './components/Heading';
-import Todos from './components/Todos';
+import Counter from './components/Counter';
+import Countercomp from './components/Countercomp';
 
 class App extends Component {
   constructor() {
@@ -28,12 +29,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Heading />
-        <Todos 
-         counter={this.state.counter} 
-         clickAdd={this.handleClickAdd} 
-         clickSub={this.handleClickSub} 
-        />
+        <div>
+          <Heading content="Counter" />
+          <Counter 
+           counter={this.state.counter} 
+           clickAdd={this.handleClickAdd} 
+           clickSub={this.handleClickSub} 
+          />
+        </div>
+        <div>
+          <Heading content="Render Counter Component" />
+          <Countercomp />
+        </div>
       </div>
     );
   }
