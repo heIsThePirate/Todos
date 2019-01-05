@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Todos extends Component {
-	render() {
+const Todos = ({ counter, clickAdd, clickSub }) => {
 		return (
-		<div>
-			<h2>0</h2><br/>
-			<button>+</button>
-			<button>-</button>
-		</div>
-		);
-	}
+			<div>
+			<h2>{counter}</h2><br/>
+			<button onClick={clickAdd}>+</button>
+			<button onClick={clickSub}>-</button>
+			</div>
+			);
 }
 
 export default Todos;
