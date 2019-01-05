@@ -28,7 +28,14 @@ export default class extends Component {
 	}
 
 	addCounters = () => {
-
+		this.setState((state) => {
+			return(
+				state.counters.push({
+					index: state.counters[state.counters.length - 1].index + 1,
+					value: 0,
+				})
+				);
+		})
 	}
 
 	render() {
