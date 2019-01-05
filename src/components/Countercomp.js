@@ -13,14 +13,28 @@ export default class extends Component {
 		};
 	}
 
+	handleAdd = (event) => {
+		const index = event.target.value;
+		this.setState((state) => {
+			return state.counters[index].value++;
+		})
+	}
+
+	handleSub = (event) => {
+		const index = event.target.value;
+		this.setState((state) => {
+			return state.counters[index].value--;
+		})
+	}
+
 	displayCounters = () => {
 		const counters = this.state.counters.map((counter) => {
 			return (
 				<div key={counter.index}>
 					<h2>{counter.value}</h2>
 					<br />
-					<button>+</button>
-					<button>-</button>
+					<button value={counter.index} onClick={this.handleAdd}>+</button>
+					<button value={counter.index} onClick={this.handleSub}>-</button>
 				</div>
 				);
 		});
