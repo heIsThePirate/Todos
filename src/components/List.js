@@ -2,7 +2,9 @@ import React from 'react';
 
 const List = ({ todos }) => {
 	return(
-		<li>{todos}</li>
+		<ul>
+			{todos.map((item,index) => <li key={index}>{item}</li>)}
+		</ul>
 		);
 }
 

@@ -15,17 +15,18 @@ export default class Todos extends Component {
 	}
 
 	addToList = () => {
-		
+		if(this.state.text.length) {
+			this.setState(state => state.todos.push(state.text));
+			this.setState({text: ''});
+		}
 	}
 
 	render() {
 		return(
 			<div>
-				<input type='text' placeholder='Enter text' onChange={this.handleChange} />
+				<input type='text' value={this.state.text} placeholder='Enter text' onChange={this.handleChange} />
 				<button onClick={this.addToList}>Add</button>
-				<ul>
-				 <List todos={this.state.todos}/>
-				</ul>
+				 <List todos={this.state.todos} />
 			</div>
 			);
 	}
