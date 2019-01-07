@@ -1,8 +1,8 @@
 import React from 'react';
 
-const List = () => {
+const List = ({ todos }) => {
 	return(
-		<li></li>
+		<li>{todos}</li>
 		);
 }
 

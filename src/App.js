@@ -4,6 +4,7 @@ import Heading from './components/Heading';
 import Counter from './components/Counter';
 import Countercomp from './components/Countercomp';
 import Todos from './components/Todos';
+import ReduxCounter from './components/ReduxCounter';
 
 class App extends Component {
   constructor() {
@@ -47,6 +48,11 @@ class App extends Component {
         <div>
           <Heading content="Todos" />
           <Todos />
+        </div>
+
+        <div>
+          <Heading content="Counter with Redux" />
+          <ReduxCounter />
         </div>
       </div>
     );
