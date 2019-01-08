@@ -16,9 +16,19 @@ export default class Todos extends Component {
 
 	addToList = () => {
 		if(this.state.text.length) {
-			this.setState(state => state.todos.push(state.text));
+			this.setState(state => {
+				const obj = {item: state.text, toggle: true};
+				return state.todos.push(obj);
+			});
 			this.setState({text: ''});
 		}
+	}
+
+	toggle = (event) => {
+		const index = event.target.value;
+		this.setState(state => {
+			return state.todos[index].toggle = !state.todos[index].toggle;
+		});
 	}
 
 	render() {
@@ -26,7 +36,7 @@ export default class Todos extends Component {
 			<div>
 				<input type='text' value={this.state.text} placeholder='Enter text' onChange={this.handleChange} />
 				<button onClick={this.addToList}>Add</button>
-				 <List todos={this.state.todos} />
+				<List todos={this.state.todos} toggle={this.toggle} />
 			</div>
 			);
 	}
